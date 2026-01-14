@@ -1,26 +1,12 @@
 <script setup>
   import Header from './components/Header.vue';
+  import Transactions from './components/Transactions.vue';
 </script>
 
 <template>
   <Header></Header>
   <div class="main">
-    <div class="welcome-message-container">
-      <h1>Welcome to RedBank!</h1>
-      <div class="trainsactions-container">
-        <div class="trainsactions-balance">
-          <h3>Your balance: $0</h3>
-        </div>
-        <div class="trainsactions-button-container">
-          <button class="btn-big">
-            <h3>Deposit</h3>
-          </button>
-          <button class="btn-big">
-            <h3>Withdraw</h3>
-          </button>
-        </div>
-      </div>
-    </div>
+    <Transactions></Transactions>
   </div>
 </template>
 
