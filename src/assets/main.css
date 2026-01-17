@@ -44,3 +44,11 @@ h3 {
 .btn-big:hover {
   background-color: var(--main-color-dimmed);
 }
+
+.btn-underline {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  font-weight: 900;
+  font-size: 15px;
+}

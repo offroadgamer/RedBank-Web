@@ -1,12 +1,12 @@
 <script setup>
   import Header from './components/Header.vue';
-  import Transactions from './components/Transactions.vue';
+  import TransactionMenu from './components/TransactionMenu.vue';
 </script>
 
 <template>
   <Header></Header>
   <div class="main">
-    <Transactions></Transactions>
+    <TransactionMenu></TransactionMenu>
   </div>
 </template>
 

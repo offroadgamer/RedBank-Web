@@ -4,16 +4,18 @@
 
 <template>
 	<div class="navbar-container">
-		<div class="logo-container">
-			<img src="@/assets/redbank_logo.jpg" alt="website logo">
-		</div>
-		<div class="title-container">
-			<h2>RedBank</h2>
-		</div>
-		<div class="menu-container">
-			<div class="burger-menu-bar"></div>
-			<div class="burger-menu-bar"></div>
-			<div class="burger-menu-bar"></div>						
+		<div class="navbar-content">
+			<div class="logo-container">
+				<img src="@/assets/redbank_logo.jpg" alt="website logo">
+			</div>
+			<div class="title-container">
+				<h2>RedBank</h2>
+			</div>
+			<div class="menu-container">
+				<div class="burger-menu-bar"></div>
+				<div class="burger-menu-bar"></div>
+				<div class="burger-menu-bar"></div>						
+			</div>
 		</div>
 	</div>
 </template>
@@ -32,18 +34,26 @@
 		height: 8rem;
 		box-shadow: 0px 20px 20px #aaaaaa;
 		display: flex;
+		justify-content: center;
+	}
+
+	.navbar-content {
+		display: flex;
 		align-items: center;
+		height: 100%;
+		width: 80vw;
+
 	}
 
 	.logo-container {
-		width: 5%;
+		width: 10%;
 		display: flex;
 		justify-content: right;
 		padding: 5px;
 	}
 
 	.title-container {
-		width: 85%;
+		width: 80%;
 	}
 	
 	.menu-container {

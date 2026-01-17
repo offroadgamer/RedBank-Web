@@ -1,59 +1,50 @@
-<script>
+<script setup>
+const props = defineProps({
+  type: String
+})
 
-  let balance = 0;
+const emit = defineEmits(['change-balance'])
 
-  function deposit() {
-    balance += 500;
-  }
+function transact(amount) {
+  emit(
+    'change-balance',
+    props.type === 'withdraw' ? -amount : amount
+  )
+}
 
-  function withdraw() {
-    balance -= 500;
-  }
+function onClick() {
+  emit('close');
+}
 </script>
 
 <template>
-  <div class="welcome-message-container">
-    <h1>Welcome to RedBank!</h1>
-  </div>
-  <div class="trainsactions-container">
-    <div class="trainsactions-balance">
-      <h3>Your balance: $0</h3>
-    </div>
-    <div class="trainsactions-button-container">
-      <button @click="deposit" class="btn-big">
-        <h3>Deposit</h3>
+  <div class="transactions-container">
+    <h3>How much would you like to {{ type === 'withdraw' ? 'Withdraw' : 'Deposit' }}?</h3>
+    <div class="transactions-button-container">
+      <button @click="transact(100)" class="btn-big">
+        <h3>$100</h3>
       </button>
-      <button @click="withdraw" class="btn-big">
-        <h3>Withdraw</h3>
+      <button @click="transact(500)" class="btn-big">
+        <h3>$500</h3>
+      </button>
+      <button @click="transact(1000)" class="btn-big">
+        <h3>$1000</h3>
       </button>
     </div>
   </div>
-  <div class="trainsactions-container">
-    <div class="trainsactions-balance">
-      <h3>How much would you like to deposit?</h3>
-    </div>
-    <div class="trainsactions-button-container">
-      <button @click="deposit" class="btn-big">
-        <h3>Deposit</h3>
-      </button>
-      <button @click="withdraw" class="btn-big">
-        <h3>Withdraw</h3>
-      </button>
-    </div>
-  </div>
+  <button @click="onClick" class="btn-underline">close</button>
 </template>
 
 <style>
-  .welcome-message-container {
-    margin-top: 50px;
-  }
   .trainsactions-container {
-    text-align: center;
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .trainsactions-button-container {
-    margin-top: 20px;
+  .transactions-button-container {
+    width: 22vw;
+    margin: 20px auto auto;
   }
-
 </style>
