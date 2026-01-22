@@ -3,7 +3,7 @@ const props = defineProps({
   type: String
 })
 
-const emit = defineEmits(['change-balance'])
+const emit = defineEmits(['change-balance', 'close'])
 
 function transact(amount) {
   emit(

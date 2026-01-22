@@ -1,5 +1,5 @@
-<script>
-	
+<script setup>
+	import LoginButton from './LoginButton.vue';
 </script>
 
 <template>
@@ -12,9 +12,12 @@
 				<h2>RedBank</h2>
 			</div>
 			<div class="menu-container">
+				<LoginButton></LoginButton>
+				<!--
 				<div class="burger-menu-bar"></div>
 				<div class="burger-menu-bar"></div>
-				<div class="burger-menu-bar"></div>						
+				<div class="burger-menu-bar"></div>	
+				-->
 			</div>
 		</div>
 	</div>

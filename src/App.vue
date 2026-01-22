@@ -1,12 +1,14 @@
 <script setup>
   import Header from './components/Header.vue';
   import TransactionMenu from './components/TransactionMenu.vue';
+  import LoginMenu from './components/LoginMenu.vue';
 </script>
 
 <template>
   <Header></Header>
   <div class="main">
     <TransactionMenu></TransactionMenu>
+    <LoginMenu></LoginMenu>
   </div>
 </template>
 

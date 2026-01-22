@@ -1,19 +1,24 @@
 <script setup>
-import { ref } from 'vue'
-import Transactions from './Transactions.vue'
+  import { ref } from 'vue'
+  import Transactions from './Transactions.vue'
 
-const transactions = ref(false)
-const balance = ref(0)
-const transactionType = ref('none')
+  const transactions = ref(false)
+  const balance = ref(0)
+  const transactionType = ref('none')
 
-function openTransactions(type) {
-  transactions.value = true
-  transactionType.value = type
-}
+  function openTransactions(type) {
+    transactions.value = true
+    transactionType.value = type
+  }
 
-function changeBalance(amount) {
-  balance.value += amount
-}
+  function changeBalance(amount) {
+    balance.value += amount
+  }
+
+  function closeTransactions() {
+    transactions.value = false
+  }
+
 </script>
 
 <template>
@@ -41,6 +46,7 @@ function changeBalance(amount) {
     v-if="transactions"
     :type="transactionType"
     @change-balance="changeBalance"
+    @close="closeTransactions"
   />
 </template>
 
