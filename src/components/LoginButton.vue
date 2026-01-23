@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <button class="btn-big">
+  <button class="btn-medium">
     <h4>Login</h4>
   </button>
 </template>

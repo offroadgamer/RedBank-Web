@@ -56,11 +56,11 @@
 	}
 
 	.title-container {
-		width: 80%;
+		width: 70%;
 	}
 	
 	.menu-container {
-		width: 10%;
+		width: 20%;
 		display: flex;
 		flex-direction: column;
 	}

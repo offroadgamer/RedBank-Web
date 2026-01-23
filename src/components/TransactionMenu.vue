@@ -67,7 +67,7 @@
   }
 
   .transactions-button-container {
-    width: 22vw;
+    width: 30vw;
     margin: 20px auto auto;
   }
 

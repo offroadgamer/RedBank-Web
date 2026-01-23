@@ -10,6 +10,7 @@
     <TransactionMenu></TransactionMenu>
     <LoginMenu></LoginMenu>
   </div>
+  <div class="gap-large"></div>
 </template>
 
 <style>

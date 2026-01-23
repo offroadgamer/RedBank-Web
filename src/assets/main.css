@@ -27,9 +27,29 @@ h4 {
   margin: 0;
 }
 
+h5 {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
 input {
   height: 2rem;
   width: 20rem;
+  font-size: 1.2rem;
+  border-radius: 0.3rem;
+  border: 1px solid black;
+}
+
+.gap-small {
+  height: 1rem;
+}
+
+.gap-medium {
+  height: 2rem;
+}
+
+.gap-large {
+  height: 4rem;
 }
 
 .main {
@@ -43,7 +63,7 @@ input {
 .btn-big {
   background-color: var(--main-color);
   height: 4rem;
-  width: 98%;
+  width: 20rem;
   border: none;
   border-radius: 5px;
   box-shadow: 0px 0px 20px #bbbbbb;
@@ -52,6 +72,36 @@ input {
 }
 
 .btn-big:hover {
+  background-color: var(--main-color-dimmed);
+}
+
+.btn-medium {
+  background-color: var(--main-color);
+  height: 4rem;
+  width: 10rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px #bbbbbb;
+  color: white;
+  margin: 5px;
+}
+
+.btn-medium:hover {
+  background-color: var(--main-color-dimmed);
+}
+
+.btn-small {
+  background-color: var(--main-color);
+  height: 3rem;
+  width: 5rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px #bbbbbb;
+  color: white;
+  margin: 5px;
+}
+
+.btn-small:hover {
   background-color: var(--main-color-dimmed);
 }
 
