@@ -16,6 +16,7 @@
       console.log("Signup: false")
       const currentItem = userData.items.find(item => item.username === usernameField)
       console.log(currentItem.id)
+      
     }
   }
 </script>
