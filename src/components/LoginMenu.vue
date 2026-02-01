@@ -1,16 +1,21 @@
-<script>
+<script setup>
   import { ref } from 'vue';
   import { UserData } from '@/stores/store';
 
   const signup = ref(false);
-
+  const usernameField = ref("");
+  const passwordField = ref("");
   const userData = UserData();
 
-  function handleAuth(username, password) {
-    if(signup) {
+  function handleAuth() {
+    console.log("Button clicked!")
+    if(signup === true) {
+      console.log("Signup: true")
       // SignUp functionality
     } else {
-      const currentItem = userData.items.find(item => item.username === username)
+      console.log("Signup: false")
+      const currentItem = userData.items.find(item => item.username === usernameField)
+      console.log(currentItem.id)
     }
   }
 </script>
@@ -21,10 +26,10 @@
     <h3 class="login-title">Login</h3>
     <div class="gap-small"></div>
     <h4>Username:</h4>
-    <input>
+    <input v-model="usernameField">
     <div class="gap-small"></div>
     <h4>Password:</h4>
-    <input>
+    <input v-model="passwordField">
     <button class="btn-small" id="login-btn" @click="handleAuth()">
       <h5 v-if="signup">Sign up</h5>
       <h5 v-else>Login</h5>
