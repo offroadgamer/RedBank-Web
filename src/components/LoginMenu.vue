@@ -8,14 +8,24 @@
   const userData = UserData();
 
   function handleAuth() {
-    console.log("Button clicked!")
+    if(usernameField.value.replace(/\s+/g, "") == "" || passwordField.value.replace(/\s+/g, "") == "") {
+      console.log("Both fields must be filled out!")
+      return
+    }
     if(signup === true) {
-      console.log("Signup: true")
       // SignUp functionality
     } else {
-      console.log("Signup: false")
-      const currentItem = userData.items.find(item => item.username === usernameField)
-      console.log(currentItem.id)
+      const usernameItem = userData.items.find(item => item.username == usernameField.value)
+      if(usernameItem == undefined) {
+        console.log("E-mail does not exist in database")
+      } else {
+        const passwordItem = userData.items.find(item => item.password == passwordField.value)
+        if(passwordItem != undefined && userData.items[usernameItem.id] != userData.items[passwordItem.id]) {
+          console.log("Wrong password!")
+        } else {
+          console.log("Successfully logged in!")
+        }
+      }
       
     }
   }
