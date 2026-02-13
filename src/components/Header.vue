@@ -1,6 +1,8 @@
 <script setup>
 	import LoginButton from './LoginButton.vue';
-	
+	import { useUiStore } from '@/stores/UIStore';
+
+	const ui = useUiStore()
 </script>
 
 <template>
@@ -13,7 +15,7 @@
 				<h2>RedBank</h2>
 			</div>
 			<div class="menu-container">
-				<LoginButton @click="toggleLoginMenu"></LoginButton>
+				<LoginButton></LoginButton>
 				<!--
 				<div class="burger-menu-bar"></div>
 				<div class="burger-menu-bar"></div>

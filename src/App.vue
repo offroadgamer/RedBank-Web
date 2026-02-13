@@ -1,21 +1,17 @@
 <script setup>
-  import { ref } from 'vue';
   import Header from './components/Header.vue';
   import TransactionMenu from './components/TransactionMenu.vue';
   import LoginMenu from './components/LoginMenu.vue';
+  import { useUiStore } from './stores/UIStore';
 
-  const loginMenuVisible = ref(false);
-
-  function toggleLoginMenu() {
-    loginMenuVisible.value = !loginMenuVisible.value
-  }
+  const ui = useUiStore()
 </script>
 
 <template>
-  <Header @toggleLoginMenu="toggleLoginMenu"></Header>
+  <Header></Header>
   <div class="main">
     <TransactionMenu></TransactionMenu>
-    <LoginMenu v-if="login"></LoginMenu>
+    <LoginMenu v-if="ui.isLoginMenuVisible"></LoginMenu>
   </div>
   <div class="gap-large"></div>
 </template>
