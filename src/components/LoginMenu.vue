@@ -20,7 +20,7 @@
         console.log("E-mail does not exist in database")
       } else {
         const passwordItem = userData.items.find(item => item.password == passwordField.value)
-        if(passwordItem != undefined && userData.items[usernameItem.id] != userData.items[passwordItem.id]) {
+        if(passwordItem == undefined || userData.items[usernameItem.id] != userData.items[passwordItem.id]) {
           console.log("Wrong password!")
         } else {
           console.log("Successfully logged in!")

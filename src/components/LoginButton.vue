@@ -4,8 +4,7 @@
   const ui = useUiStore()
 
   function showLoginMenu() {
-    console.log(ui.isLoginMenuVisible)
-    ui.showLoginMenu
+    ui.showLoginMenu()
   }
 </script>
 

@@ -9,7 +9,6 @@ export const useUiStore = defineStore('ui', {
       this.isLoginMenuVisible = !this.isLoginMenuVisible;
     },
     showLoginMenu() {
-      console.log("Show login menu ran!")
       this.isLoginMenuVisible = true;
     },
     hideLoginMenu() {
