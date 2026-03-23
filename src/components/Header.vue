@@ -16,11 +16,6 @@
 			</div>
 			<div class="menu-container">
 				<LoginButton></LoginButton>
-				<!--
-				<div class="burger-menu-bar"></div>
-				<div class="burger-menu-bar"></div>
-				<div class="burger-menu-bar"></div>	
-				-->
 			</div>
 		</div>
 	</div>

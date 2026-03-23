@@ -1,4 +1,5 @@
 <script setup>
+  import '@/assets/colors.css';
   import { ref } from 'vue';
   import { UserData } from '@/stores/store';
 
@@ -7,9 +8,32 @@
   const passwordField = ref("");
   const userData = UserData();
 
+  const usernameError = ref(true);
+  const passwordError = ref(true);
+  const usernameErrorMessage = ref("");
+  const passwordErrorMessage = ref("");
+
+  function handleLoginError(type, message) {
+    if(type = "username") {
+      usernameError.value = true;
+      usernameErrorMessage.value = message;
+    } else {
+      passwordError.value = true;
+      passwordErrorMessage.value = message;
+    }
+  }
+
   function handleAuth() {
-    if(usernameField.value.replace(/\s+/g, "") == "" || passwordField.value.replace(/\s+/g, "") == "") {
-      console.log("Both fields must be filled out!")
+    usernameError.value = false;
+    passwordError.value = false;
+    if(usernameField.value.replace(/\s+/g, "") == "") {
+      console.log("Username must be filled out!")
+      handleLoginError("username", "This field must be filled out!")
+      return
+    }
+    if(passwordField.value.replace(/\s+/g, "") == "") {
+      console.log("Password must be filled out!")
+      handleLoginError("password", "This field must be filled out!")
       return
     }
     if(signup === true) {
@@ -26,7 +50,6 @@
           console.log("Successfully logged in!")
         }
       }
-      
     }
   }
 </script>
@@ -38,9 +61,11 @@
     <div class="gap-small"></div>
     <h4>Username:</h4>
     <input v-model="usernameField">
+    <h5 v-if="usernameError" class="login-error">{{usernameErrorMessage}}</h5>
     <div class="gap-small"></div>
     <h4>Password:</h4>
     <input v-model="passwordField">
+    <h5 v-if="passwordError" class="login-error">{{passwordErrorMessage}}</h5>
     <button class="btn-small" id="login-btn" @click="handleAuth()">
       <h5 v-if="signup">Sign up</h5>
       <h5 v-else>Login</h5>
@@ -59,5 +84,11 @@
   #login-btn {
     margin: 10px 0;
   }
+
+  .login-error {
+    color: var(--main-color);
+  }
+
+  
   
 </style>
