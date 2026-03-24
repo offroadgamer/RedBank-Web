@@ -8,16 +8,17 @@
   const passwordField = ref("");
   const userData = UserData();
 
-  const usernameError = ref(true);
-  const passwordError = ref(true);
+  const usernameError = ref(false);
+  const passwordError = ref(false);
   const usernameErrorMessage = ref("");
   const passwordErrorMessage = ref("");
 
   function handleLoginError(type, message) {
-    if(type = "username") {
+    if(type == "username") {
       usernameError.value = true;
       usernameErrorMessage.value = message;
-    } else {
+    } 
+    if(type == "password") {
       passwordError.value = true;
       passwordErrorMessage.value = message;
     }
@@ -36,6 +37,7 @@
       handleLoginError("password", "This field must be filled out!")
       return
     }
+   
     if(signup === true) {
       // SignUp functionality
     } else {
