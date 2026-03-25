@@ -3,6 +3,10 @@
 	import { useUiStore } from '@/stores/UIStore';
 
 	const ui = useUiStore()
+
+	function showLoginMenu() {
+		ui.showLoginMenu();
+	}
 </script>
 
 <template>
@@ -15,6 +19,7 @@
 				<h2>RedBank</h2>
 			</div>
 			<div class="menu-container">
+				<button class="btn-underline" @click="showLoginMenu()"><h5>Sign up</h5></button>
 				<LoginButton></LoginButton>
 			</div>
 		</div>
@@ -54,13 +59,14 @@
 	}
 
 	.title-container {
-		width: 70%;
+		width: 60%;
 	}
 	
 	.menu-container {
-		width: 20%;
+		width: 30%;
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		justify-content: space-around;
 	}
 
 	.burger-menu-bar {
