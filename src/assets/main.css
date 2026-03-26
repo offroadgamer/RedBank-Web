@@ -42,14 +42,17 @@ input {
 
 .gap-small {
   height: 1rem;
+  width: 1rem;
 }
 
 .gap-medium {
   height: 2rem;
+  width: 2rem;
 }
 
 .gap-large {
   height: 4rem;
+  width: 4rem;
 }
 
 .main {

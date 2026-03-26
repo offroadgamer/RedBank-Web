@@ -20,6 +20,7 @@
 			</div>
 			<div class="menu-container">
 				<button class="btn-underline" @click="showLoginMenu()"><h5>Sign up</h5></button>
+				<div class="gap-medium"></div>
 				<LoginButton></LoginButton>
 			</div>
 		</div>
@@ -66,7 +67,7 @@
 		width: 30%;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: center;
 	}
 
 	.burger-menu-bar {
