@@ -1,25 +1,28 @@
 <script setup>
-const props = defineProps({
-  type: String
-})
+  import { useI18n } from 'vue-i18n'
 
-const emit = defineEmits(['change-balance', 'close'])
+  const { t } = useI18n()
+  const props = defineProps({
+    type: String
+  })
 
-function transact(amount) {
-  emit(
-    'change-balance',
-    props.type === 'withdraw' ? -amount : amount
-  )
-}
+  const emit = defineEmits(['change-balance', 'close'])
 
-function onClick() {
-  emit('close');
-}
+  function transact(amount) {
+    emit(
+      'change-balance',
+      props.type === 'withdraw' ? -amount : amount
+    )
+  }
+
+  function onClick() {
+    emit('close');
+  }
 </script>
 
 <template>
   <div class="transactions-container">
-    <h3>How much would you like to {{ type === 'withdraw' ? 'Withdraw' : 'Deposit' }}?</h3>
+    <h3>{{ t('transactions_text')}} {{ type === 'withdraw' ? 'Withdraw' : 'Deposit' }}?</h3>
     <div class="transactions-button-container">
       <button @click="transact(100)" class="btn-big">
         <h3>$100</h3>
@@ -32,7 +35,7 @@ function onClick() {
       </button>
     </div>
   </div>
-  <button @click="onClick" class="btn-underline">close</button>
+  <button @click="onClick" class="btn-underline">{{ t('btn.close') }}</button>
 </template>
 
 <style>

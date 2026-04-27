@@ -1,7 +1,9 @@
 <script setup>
   import { ref } from 'vue'
   import Transactions from './Transactions.vue'
+  import { useI18n } from 'vue-i18n'
 
+  const { t } = useI18n()
   const transactions = ref(false)
   const balance = ref(0)
   const transactionType = ref('none')
@@ -23,21 +25,21 @@
 
 <template>
   <div class="welcome-message-container">
-    <h1>Welcome to RedBank!</h1>
+    <h1>{{ t('welcome_text') }}</h1>
   </div>
 
   <div class="transactions-container">
     <div class="trainsactions-balance">
-      <h3>Your balance: ${{ balance }}</h3>
+      <h3>{{ t('balance_text') }} ${{ balance }}</h3>
     </div>
 
     <div class="transactions-button-container">
       <button @click="openTransactions('deposit')" class="btn-big">
-        <h3>Deposit</h3>
+        <h3>{{ t('deposit_btn_text')}}</h3>
       </button>
 
       <button @click="openTransactions('withdraw')" class="btn-big">
-        <h3>Withdraw</h3>
+        <h3>{{ t('withdraw_btn_text') }}</h3>
       </button>
     </div>
   </div>
