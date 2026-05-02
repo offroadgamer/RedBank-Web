@@ -14,6 +14,7 @@
     <LoginMenu v-if="ui.isLoginMenuVisible"></LoginMenu>
   </div>
   <div class="gap-large"></div>
+  <p>This is a test</p>
 </template>
 
 <style>
