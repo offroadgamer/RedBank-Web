@@ -22,7 +22,7 @@
 
 <template>
   <div class="transactions-container">
-    <h3>{{ t('transactions_text')}} {{ type === 'withdraw' ? 'Withdraw' : 'Deposit' }}?</h3>
+    <h3>{{ t('main.transactions_text')}} {{ type === 'withdraw' ? 'Withdraw' : 'Deposit' }}?</h3>
     <div class="transactions-button-container">
       <button @click="transact(100)" class="btn-big">
         <h3>$100</h3>

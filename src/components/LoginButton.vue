@@ -3,7 +3,12 @@
 
   const ui = useUiStore()
 
-  function showLoginMenu() {
+  function showLoginMenu(signup) {
+    if (signup) {
+      ui.signUpTrue()
+    } else {
+      ui.signUpFalse()
+    }
     ui.showLoginMenu()
   }
 </script>
