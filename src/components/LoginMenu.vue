@@ -10,10 +10,18 @@
 
   const usernameError = ref(false);
   const passwordError = ref(false);
-  const loginStatus = ref(false);
+  const loginStatus = ref(false);  
   const usernameErrorMessage = ref("");
   const passwordErrorMessage = ref("");
   const loginStatusMessage = ref("");
+
+  import { useUiStore } from '@/stores/UIStore';
+
+  const ui = useUiStore()
+
+  if (ui.signUp) {
+    signup.value = ref(true);
+  }
 
   function handleLoginError(type, message) {
     if(type == "username") {
@@ -69,7 +77,8 @@
 <template>
   <div class="login-box">
     <div class="gap-medium"></div>
-    <h3 class="login-title">Login</h3>
+    <h3 v-if="signup" class="login-title">Sign up</h3>
+    <h3 v-else class="login-title">Login</h3>
     <div class="gap-small"></div>
     <h4>Username:</h4>
     <input v-model="usernameField">

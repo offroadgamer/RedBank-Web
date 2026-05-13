@@ -5,8 +5,10 @@
 	const ui = useUiStore()
 
 	function showLoginMenu() {
+		ui.hideLoginMenu()
 		ui.showLoginMenu();
-	}
+		ui.signUpTrue();
+	}	
 </script>
 
 <template>
