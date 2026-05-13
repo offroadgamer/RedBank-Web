@@ -20,7 +20,7 @@
   const ui = useUiStore()
 
   if (ui.signUp) {
-    signup.value = ref(true);
+    signup.value = true;
   }
 
   function handleLoginError(type, message) {
